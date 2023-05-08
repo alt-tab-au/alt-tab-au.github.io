@@ -1,0 +1,14 @@
+<header>
+  <nav id="topnav">
+    <div>
+			<a href="/"><span id="logo-header">alt-tab</span></a>
+    </div>
+    <div id="nav-links">
+      {% for linktitle, link in MENUITEMS %}
+			% if page and page.title != linktitle:
+				<a href="/{{ link }}">{{ linktitle }}</a>
+			% endif
+      {% endfor %}
+    </div>
+  </nav>
+</header>

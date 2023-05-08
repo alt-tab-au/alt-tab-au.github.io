@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+% set title = page.title
+
+{% block meta_tags_in_head %}
+% if page.tags or page.category:
+  <meta name="keywords" content="{{ [page.tags|join(', '), page.category]|join(', ') }}" />
+% endif
+% if page.description:
+  <meta name="description" content="{{ page.description|striptags  }}" />
+% endif
+{% endblock meta_tags_in_head %}
+
+{% block content %}
+<div class="content">
+  {{ page.content }}
+</div>
+{% endblock %}

@@ -1,0 +1,242 @@
+html {
+    --clr-orange: #fe8019;
+    --clr-red: #C82D47;
+    --clr-red-light: #fb4934;
+     
+    --clr-fg: #6b1826;
+    --clr-bg: #d9d2e9;
+    --clr-bg-light: #E8E4F1;
+    
+    --clr-accent: #FFFACC;
+
+    background-color: var(--clr-bg);
+
+}
+
+body {
+    min-height: 100vh;
+    font-family: "IBM Plex Sans", sans-serif;
+    margin: auto;
+    padding: 0;
+    color: var(--clr-fg);
+    overflow-wrap: break-word;
+}
+
+
+main {
+    width: 80%;
+    max-width: 800px;
+    margin: auto;
+    flex-grow:1;
+    background-color: var(--clr-bg);
+}
+
+header {
+    height:fit-content;
+}
+
+
+/*
+Index/homepage
+*/
+#homepage {
+    text-align: center;
+}
+
+.paginator {
+    text-align: center;
+    font-size: 1.6rem;
+}
+
+#logo {
+    max-width: fit-content;
+    margin: auto;
+}
+
+
+#logo-header {
+    font-size: 2em;
+    font-family: 'Martian Mono';
+    
+    grid-area: logo;
+    justify-self: start;
+    color: var(--clr-accent);
+
+    /* text-shadow: .0em -.05em 1px var(--clr-orange),
+        .0em -.1em 1px #FFD662, 
+        .0em -.15em 1px #FF80BF, 
+        .0em -.2em 1px #EF5097; */
+
+    text-shadow: .0em -.05em 0px var(--clr-orange),
+        .0em -.15em 0px var(--clr-red-light),
+        .0em -.2em 0px var(--clr-orange);
+}
+
+h1#logo-header {
+    font-size: 8em;
+    margin-block-end: 0;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+#logo-subheader {
+    font-family: 'Martian Mono';
+    margin-block-start: 0;
+    margin-top: 0;
+    text-align: end;
+}
+
+/*
+Navbar
+*/
+#topnav {
+    display: grid;
+    align-items: center;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "logo rightlinks";
+    padding: 0.4rem 0.8rem;
+    margin: 1em;
+    font-family: "Martian Mono", monospace;
+    grid-area: header;
+}
+#nav-sitename {
+    grid-area: logo;
+    justify-self: start;
+}
+#nav-links {
+    grid-area: rightlinks;
+    text-align: end;
+}
+
+
+#homepage-links {
+    /* font-size: 0.8rem; */
+    margin: auto;
+    max-width: 400px;
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.content {
+    height:100%;
+    width: 600px;
+    margin: 2em auto;
+    font-size: 1.2em;
+
+}
+
+
+mark {
+    color: var(--clr-bg);
+    background: var(--clr-fg);
+}
+
+
+a {
+    text-decoration: none;
+    color: var(--clr-red);
+}
+
+a:hover {
+    color: var(--clr-red-light);
+}
+
+sub {
+    font-size: small;
+}
+
+
+pre {
+    margin: 0;
+    padding: 0.3em 0.5em 0.5em;
+    background: var(--clr-bg-light);
+}
+
+code {
+    font-size: 0.7em;
+    font-family: "Martian Mono", monospace;
+}
+
+blockquote {
+    border-left: 5px solid var(--clr-accent);
+    width: 80%;
+    margin:1rem 1rem;
+    padding: 1px 0.4rem;
+    font-family: "PT Serif", "Baskerville", serif;
+    text-align: justify;
+    line-height: 1.2rem;
+    font-size: 1.0rem;
+}
+blockquote > blockquote { /* yo dawg */
+    margin: 0.5rem 0.5rem;
+    width: auto;
+}
+blockquote p {
+    margin: 0rem 0.2rem;
+}
+
+img {
+    max-width: 100%;
+}
+
+ul {
+    margin: 0;
+}
+
+#sidebar {
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+@media screen and (max-width: 800px) {
+    h1#logo-header {
+        font-size: 3em;
+    }
+    #logo-subheader {
+        font-size: 1em;
+    }
+}
+
+@media screen and (min-width: 893px) and (max-width: 1200px)  {
+    /* Dot grid background: fades in around main content */
+    html {
+        background-image: radial-gradient(circle, #A393C8 1px, #d9d2e9 1px);
+        background-size: 40px 40px;
+    }
+    body {
+        background-image: -webkit-linear-gradient(left,
+        #00000000 0%,
+        var(--clr-bg) 15%,
+        var(--clr-bg) 85%,
+        #00000000 100%
+        );
+    }
+}
+
+@media screen and (min-width: 1201px) {
+    html {
+        background-image: radial-gradient(circle, #A393C8 1px, #d9d2e9 1px);
+        background-size: 40px 40px;
+    }
+    body {
+        background-image: -webkit-linear-gradient(left,
+        #00000000 0%,
+        var(--clr-bg) 20%,
+        var(--clr-bg) 80%,
+        #00000000 100%
+        );
+    }
+}

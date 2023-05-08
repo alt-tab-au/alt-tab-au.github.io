@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+% include '_head_std.html'
+
+<body>
+<main id="homepage">
+
+	<div id="logo">
+		<h1 id="logo-header">alt-tab</h1>
+		<h3 id="logo-subheader">alternative tech talks · perth wa</h3>
+	</div>
+	
+		<img src="/static/thinker.gif" >
+	
+
+	% if articles_page.object_list:
+	<div class="index-section">
+		<h2>Updates</h2>
+		<ul class="post-list content">
+			{% for article in articles_page.object_list %}
+			<li>
+				<time class="list-date" datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time> <a class="list-title" href="/{{ article.url }}" rel="bookmark" title="{{ article.title|striptags }}">{{ article.title }}</a>
+			</li>
+			{% endfor %}
+		</ul>
+		% if articles_page.has_other_pages():
+			{% include '_pagination.html' %}
+		% endif
+	% endif
+	</div>
+
+	<div id="homepage-links">
+		{% for linktitle, link in MENUITEMS %}
+		<div>
+			<a href="/{{ link }}">{{ linktitle }}</a>
+		</div>
+		{% endfor %}
+	</div>
+
+</main>
+</body>
+</html>
