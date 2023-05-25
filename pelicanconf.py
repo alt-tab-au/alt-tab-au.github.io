@@ -26,6 +26,7 @@ STATIC_PATHS = ['static']
 EXTRA_PATH_METADATA = {
 	'static/robots.txt': {'path': 'robots.txt'},
 	'static/favicon.ico': {'path': 'favicon.ico'},
+	'static/img/': {'path': 'img/'}
 }
 STATIC_SAVE_AS = '{path}'
 STATIC_URL = '{path}'
@@ -35,19 +36,19 @@ MENUITEMS = [
 	('contact', 'contact')
 ]
 
-ARTICLE_URL = '{slug}/'
-ARTICLE_SAVE_AS = '{slug}/index.html'
+ARTICLE_URL = '{category}/{slug}/'
+ARTICLE_SAVE_AS = '{category}/{slug}/index.html'
 PAGE_URL = '{slug}/'
 PAGE_SAVE_AS = '{slug}/index.html'
-CATEGORY_URL = 'category/{slug}'
-CATEGORY_SAVE_AS = 'category/{slug}.html'
+CATEGORY_URL = '{slug}/'
+CATEGORY_SAVE_AS = '{slug}/index.html'
 TAGS_URL = 'tags/'
 TAGS_SAVE_AS = 'tags/index.html'
-TAG_URL = 'tagged/{slug}'
+TAG_URL = 'tagged/{slug}/'
 TAG_SAVE_AS = 'tagged/{slug}/index.html'
-DRAFT_URL = 'drafts/{slug}'
+DRAFT_URL = 'drafts/{slug}/'
 DRAFT_SAVE_AS = 'drafts/{slug}.html'
-DRAFT_PAGE_URL = 'drafts/pages/{slug}'
+DRAFT_PAGE_URL = 'drafts/pages/{slug}/'
 DRAFT_PAGE_SAVE_AS = 'drafts/pages/{slug}.html'
 AUTHOR_SAVE_AS = "" # disabled
 

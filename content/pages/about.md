@@ -1,3 +1,3 @@
 Title: about
 
-alt-tab is... TBD
+alt-tab is a new meetup for smart conversations about technology.

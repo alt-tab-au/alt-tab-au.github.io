@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content_title %}{% endblock %}
+
+{% block content %}
+<section class="content">
+  {% for article in articles_page.object_list %}
+  <article class="post-single">
+    {% include '_post-header.html' %}
+    <div class="post-content">
+      {{ article.content }}
+    </div>
+    <!-- todo: 'read more'/summary -->
+  </article>
+  {% endfor %}
+</section>
+
+{% if articles_page.has_other_pages() %}
+{% include '_pagination.html' %}
+{% endif %}
+{% endblock content %}

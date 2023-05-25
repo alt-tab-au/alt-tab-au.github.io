@@ -15,12 +15,14 @@
 
 	% if articles_page.object_list:
 	<div class="index-section">
-		<h2>Updates</h2>
-		<ul class="post-list content">
-			{% for article in articles_page.object_list %}
+		<h2>Events</h2>
+		<ul class="event-list">
+			{% for article in articles_page.object_list if article.category.name == 'events' %}
+			
 			<li>
-				<time class="list-date" datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time> <a class="list-title" href="/{{ article.url }}" rel="bookmark" title="{{ article.title|striptags }}">{{ article.title }}</a>
+				<time class="list-date" datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time> · <a class="list-title" href="/{{ article.url }}" rel="bookmark" title="{{ article.title|striptags }}">{{ article.title }}</a>
 			</li>
+			
 			{% endfor %}
 		</ul>
 		% if articles_page.has_other_pages():
