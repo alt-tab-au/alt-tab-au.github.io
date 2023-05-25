@@ -94,6 +94,7 @@ Navbar
     margin: 1em;
     font-family: "Martian Mono", monospace;
     grid-area: header;
+    background-color: var(--clr-bg);
 }
 #nav-sitename {
     grid-area: logo;
