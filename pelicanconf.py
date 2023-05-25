@@ -26,7 +26,8 @@ STATIC_PATHS = ['static']
 EXTRA_PATH_METADATA = {
 	'static/robots.txt': {'path': 'robots.txt'},
 	'static/favicon.ico': {'path': 'favicon.ico'},
-	'static/img/': {'path': 'img/'}
+	'static/img/': {'path': 'img/'},
+	'static/CNAME': {'path': 'CNAME'}
 }
 STATIC_SAVE_AS = '{path}'
 STATIC_URL = '{path}'
