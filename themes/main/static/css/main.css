@@ -20,11 +20,8 @@ body {
 }
 
 main {
-    width: 80%;
-    max-width: 800px;
     margin: auto;
-    flex-grow:1;
-    background-color: var(--clr-bg);
+    flex-grow: 1;
 }
 
 header {
@@ -37,6 +34,8 @@ Index/homepage
 */
 #homepage {
     text-align: center;
+    width: 80%;
+    max-width: 800px;
 }
 
 .paginator {
