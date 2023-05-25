@@ -7,4 +7,4 @@ Image: /img/session0.jpg
 
 **03.07.2023 5:30pm @ SLWA Geographe**
 
-[RSVP here](https://events.humanitix.com/alt-tab-session-0)
+[Info/RSVP](https://events.humanitix.com/alt-tab-session-0)
