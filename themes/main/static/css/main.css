@@ -233,4 +233,9 @@ ul {
         #00000000 100%
         );
     }
+
+    #img-feature {
+        max-width: 1200px;
+        margin: auto;
+    }
 }

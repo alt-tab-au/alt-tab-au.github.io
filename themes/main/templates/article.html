@@ -19,7 +19,9 @@
 
 {% block content %}
 % if article.image:
-<img id="img-feature" src="{{article.image}}" />
+<section id="img-feature">
+<img src="{{article.image}}" />
+</section>
 % endif
 <section class="content">
   <article class="post-single">
