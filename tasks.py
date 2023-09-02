@@ -35,15 +35,14 @@ def livereload(c):
     cached_build()
     server = Server()
     theme_path = SETTINGS['THEME']
+    # config
     server.watch(SETTINGS['_dev_config_path'], cached_build)
-    server.watch(f'{theme_path}/templates/**/*.html', cached_build)
-    
     # content files
-    for extension in ['.md', '.rst']:
-        content_glob = f'{SETTINGS["PATH"]}/**/*{extension}'
-        server.watch(content_glob, cached_build)
+    server.watch(f'{SETTINGS["PATH"]}/**', cached_build)
+    # templates
+    server.watch(f'{theme_path}/templates/**/*.html', cached_build)
 
-    # static files
+    # theme files
     for extension in ['.css', '.js']:
         static_glob = f'{theme_path}/static/**/*{extension}'
         server.watch(static_glob, cached_build)
