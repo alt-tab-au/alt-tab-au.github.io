@@ -35,6 +35,11 @@ header {
     height:fit-content;
 }
 
+footer {
+    font-family: 'Martian Mono';
+    padding: 2em;
+    text-align: center;
+}
 
 /*
 Index/homepage
@@ -112,6 +117,15 @@ Navbar
     text-align: end;
 }
 
+#nav-extra {
+    grid-area: rightlinks;
+    text-align: end;
+}
+
+#nav-extra > p {
+    margin: 0;
+}
+
 
 #homepage-links {
     margin: auto;
@@ -124,22 +138,26 @@ Navbar
 }
 
 
-.content {
+.post-list, .post-single {
     height:100%;
     width: 800px;
     margin: 2em auto;
     font-size: 1.2em;
 }
 
-#img-feature {
+.img-feature {
+    display: block;
     margin: auto;
     text-align: center;
-}
-#img-feature > img {
     max-width: 100%;
     max-height: 600px;
 }
 
+.img-feature-small {
+    max-width: 100%;
+    max-height: 600px;
+
+}
 
 mark {
     color: var(--clr-bg);
@@ -192,6 +210,11 @@ blockquote p {
 
 ul {
     margin: 0;
+}
+
+.post-list > article {
+    border: 2px solid;
+    margin-bottom: 1em;
 }
 
 /* #sidebar {

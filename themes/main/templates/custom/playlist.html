@@ -1,0 +1,142 @@
+{% extends "extra.html" %}
+
+
+{% block head_extra %}
+<link rel="preconnect" href="https://bandcamp.com" />
+
+<style>
+.bandcamp-embed {
+	border: 0;
+	width: 100%;
+	max-width: 600px;
+	height: 250px;
+	margin: auto;
+}
+
+/* based off https://codepen.io/alvarotrigo/pen/OJzLojG */
+input[name="accordion"] {
+  display: none;
+}
+
+label.accordion-header {
+  display: block;
+  padding: 0.6em;
+  background: #C82D47;
+  color: white;
+  cursor: pointer;
+	display: flex;
+	justify-content: space-between;
+}
+label.accordion-header:after {
+      content: '+';
+      color: white;
+      text-align: center;
+}
+label.accordion-header:hover {
+  background: #fb4934;
+}
+
+.collapsible {
+  width: 100%;
+	margin: auto;
+	overflow: hidden;
+  height: 0;
+	padding-top: 0.3em;
+	text-align: center;
+
+  -webkit-transition: height 0.2s ease;
+  -moz-transition: height 0.2s ease;
+  -ms-transition: height 0.2s ease;
+  -o-transition: height 0.2s ease;
+  transition: height 0.2s ease;
+}
+
+input[name="accordion"]:checked + label + .collapsible {
+  overflow: auto;
+  height: 260px;
+}
+</style>
+{% endblock head_extra %}
+
+{% block content %}
+% if article.image:
+	<img class="img-feature" src="{{article.image}}" />
+% endif
+<section class="post-single">
+	<article>
+		<div class="content">
+			{{ article.content }}
+
+			<div>
+			<input type="radio" name="accordion" id="accordion_1">
+			<label class="accordion-header" for="accordion_1">For Meta Or For Worse by People Taking Pictures</label>
+			<div class="collapsible">
+				<iframe loading="lazy" class="bandcamp-embed"
+					src="https://bandcamp.com/EmbeddedPlayer/album=2184715656/size=large/bgcol=ffffff/linkcol=C82D47/artwork=none/transparent=true/"
+					seamless><a href="https://peopletakingpictures.bandcamp.com/album/for-meta-or-for-worse">For Meta Or For Worse by
+						People Taking Pictures</a></iframe>
+			</div>
+
+			<input type="radio" name="accordion" id="accordion_2">
+			<label class="accordion-header" for="accordion_2">Suburban Condition by Dennis Cometti</label>
+			<div class="collapsible">
+				<iframe loading="lazy" class="bandcamp-embed"
+					src="https://bandcamp.com/EmbeddedPlayer/album=965303029/size=large/bgcol=ffffff/linkcol=C82D47/artwork=small/transparent=true/"
+					seamless><a href="https://denniscometti.bandcamp.com/album/suburban-condition-2">Suburban Condition by Dennis
+						Cometti</a></iframe>
+			</div>
+			
+			<input type="radio" name="accordion" id="accordion_3">
+			<label class="accordion-header" for="accordion_3" tabindex=0>Bowls Club by SWEAT</label>
+			<div class="collapsible">
+				<iframe loading="lazy" class="bandcamp-embed" src="https://bandcamp.com/EmbeddedPlayer/track=4099388090/size=large/bgcol=ffffff/linkcol=C82D47/tracklist=true/artwork=small/transparent=true/" seamless><a href="https://sweatbandgals.bandcamp.com/track/bowls-club">Bowls Club by SWEAT</a></iframe>
+			</div>
+			
+			<input type="radio" name="accordion" id="accordion_4">
+			<label class="accordion-header" for="accordion_4">The Nashville Record by Catherine Traicos</label>
+			<div class="collapsible">
+				<iframe loading="lazy" class="bandcamp-embed"
+					src="https://bandcamp.com/EmbeddedPlayer/album=2786539558/size=large/bgcol=ffffff/linkcol=C82D47/tracklist=true/artwork=small/transparent=true/"
+					seamless><a href="https://catherinetraicos.bandcamp.com/album/the-nashville-record">The Nashville Record by Catherine
+						Traicos</a></iframe>
+			</div>
+
+			<input type="radio" name="accordion" id="accordion_5">
+			<label class="accordion-header" for="accordion_5">FANM:WOMAN by Grace Barbe</label>
+			<div class="collapsible">
+				<iframe loading="lazy" class="bandcamp-embed"
+					src="https://bandcamp.com/EmbeddedPlayer/album=1440484101/size=large/bgcol=ffffff/linkcol=C82D47/tracklist=true/artwork=small/transparent=true/"
+					seamless><a href="https://music.gracebarbe.com/album/fanm-woman">FANM:WOMAN by Grace Barbe</a></iframe>
+			</div>
+
+			<input type="radio" name="accordion" id="accordion_6">
+			<label class="accordion-header" for="accordion_6">Rifts by Plyanci and Justin Ashworth</label>
+			<div class="collapsible">
+				<iframe loading="lazy" class="bandcamp-embed"
+					src="https://bandcamp.com/EmbeddedPlayer/album=2749945190/size=large/bgcol=ffffff/linkcol=C82D47/tracklist=true/artwork=small/transparent=true/"
+					seamless><a href="https://plyancijustinashworth.bandcamp.com/album/rifts">Rifts by Plyanci and Justin Ashworth</a></iframe>
+			</div>
+
+			<input type="radio" name="accordion" id="accordion_7">
+			<label class="accordion-header" for="accordion_7">In Motion by Chris Foster</label>
+			<div class="collapsible">
+				<iframe loading="lazy" class="bandcamp-embed"
+					src="https://bandcamp.com/EmbeddedPlayer/album=3089380399/size=large/bgcol=ffffff/linkcol=C82D47/tracklist=true/artwork=small/transparent=true/"
+					seamless><a href="https://chrisfostermusic.bandcamp.com/album/in-motion-2">In Motion by Chris Foster</a></iframe>
+			</div>
+
+			<input type="radio" name="accordion" id="accordion_8">
+			<label class="accordion-header" for="accordion_8">Songs To Come Home To by Ta-ku</label>
+			<div class="collapsible">
+				<iframe loading="lazy" class="bandcamp-embed"
+					src="https://bandcamp.com/EmbeddedPlayer/album=1777768901/size=large/bgcol=ffffff/linkcol=C82D47/tracklist=true/artwork=small/transparent=true/"
+					seamless><a href="https://takuakaflip.bandcamp.com/album/songs-to-come-home-to-2">Songs To Come Home To by
+						Ta-ku</a></iframe> -->
+			</div>
+			</div>
+		</div>
+	</article>
+</section>
+
+
+{% endblock %}

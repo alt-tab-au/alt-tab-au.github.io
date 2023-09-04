@@ -1,17 +1,15 @@
-
 {% extends "base.html" %}
-
-{% block content_title %}{% endblock %}
+% set title = category
 
 {% block content %}
-<section class="content">
+<section class="post-list">
   {% for article in articles_page.object_list %}
-  <article class="post-single">
+  <article>
+		{% include '_post-header.html' %}
 		% if article.image:
-		<img src="{{article.image}}" />
+		<img class="img-feature" src="{{article.image}}" />
 		% endif
-    {% include '_post-header.html' %}
-    <div class="content post-content">
+    <div class="content">
       {{ article.content }}
     </div>
     <!-- todo: 'read more'/summary -->

@@ -3,14 +3,19 @@
     <div>
 			<a href="/"><span id="logo-header">alt-tab</span></a>
     </div>
+		% if article and article.category == "extras":
+			<div id="nav-extra">
+				<p>extra: <a href="{{ article.eventurl }}">{{ article.eventname|lower }}</a></p>
+			</div>
+		% else:
     <div id="nav-links">
-      {% for linktitle, link in MENUITEMS %}
+			{% for linktitle, link in MENUITEMS %}
+
 			% if not page or (page and page.title != linktitle):
 				<a href="/{{ link }}">{{ linktitle }}</a>
-			
 				% endif
-
-      {% endfor %}
+			{% endfor %}
+		% endif
     </div>
   </nav>
 </header>

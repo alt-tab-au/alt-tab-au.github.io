@@ -1,12 +1,11 @@
 {% extends "base.html" %}
-{% block content_title %}{% endblock %}
-
+% set title = tag
 {% block content %}
-<section class="content">
+<section class="content post-list">
   {% for article in articles_page.object_list %}
-  <article class="post-single">
+  <article>
     {% include '_post-header.html' %}
-    <div class="post-content">
+    <div>
       {{ article.content }}
     </div>
     <!-- todo: 'read more'/summary -->

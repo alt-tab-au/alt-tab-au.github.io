@@ -28,6 +28,8 @@ def livereload(c):
     """Automatically reload browser tab upon file modification."""
     from livereload import Server
 
+    clean(c)
+
     def cached_build():
         cmd = '-s {_dev_config_path} -e CACHE_CONTENT=true LOAD_CONTENT_CACHE=true'
         pelican_run(cmd.format(**SETTINGS))

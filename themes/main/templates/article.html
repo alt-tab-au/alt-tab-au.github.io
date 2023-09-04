@@ -1,7 +1,5 @@
 {% extends "base.html" %}
-{% block title %}
-{{ article.title|striptags }}
-{% endblock %}
+% set title = article.title|striptags
 
 {% block meta_tags_in_head %}
 % if article.tags or article.category:
@@ -19,18 +17,26 @@
 
 {% block content %}
 % if article.image:
-<section id="img-feature">
-<img src="{{article.image}}" />
-</section>
+<img class="img-feature" src="{{article.image}}" />
 % endif
-<section class="content">
-  <article class="post-single">
+<section class="post-single">
+  <article>
     {% include '_post-header.html' %}
-    <div class="post-content">
+    <div class="content">
       {{ article.content }}
     </div>
   </article>
 
+	% if article.extras:
+	<h3>Extras</h3>
+	<ul>
+		{% for linktitle, link in article.extras %}
+		<li><a href="{{ link }}">{{ linktitle }}</a></li>
+		{% endfor %}
+	</ul>
+	
+	
+	
+	% endif
 </section>
-
 {% endblock %}
