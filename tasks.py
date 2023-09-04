@@ -61,7 +61,7 @@ def livereload(c):
 def publish(c):
     """Publish site to GitHub Pages."""
     preview(c)
-    c.run('ghp-import -o -p -f'
+    c.run('ghp-import -o -p -f '
           '-r {_git_remote} '
           '-b {_git_branch} '
           '-m {_git_commit} '
