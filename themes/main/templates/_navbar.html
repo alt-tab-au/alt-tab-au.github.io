@@ -5,9 +5,11 @@
     </div>
     <div id="nav-links">
       {% for linktitle, link in MENUITEMS %}
-			% if page and page.title != linktitle:
+			% if not page or (page and page.title != linktitle):
 				<a href="/{{ link }}">{{ linktitle }}</a>
-			% endif
+			
+				% endif
+
       {% endfor %}
     </div>
   </nav>

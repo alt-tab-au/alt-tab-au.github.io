@@ -1,6 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-% include '_head_std.html'
+<head>
+	<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="generator" content="Pelican">
+	<meta name="rating" content="General">
+	<meta name="referrer" content="no-referrer-when-downgrade">
+
+	<meta property="og:image" content="{{ ABS_URL }}/img/logo.png" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="{{ ABS_URL }}" />
+	<meta property="og:title" content="{{ SITENAME }}" />
+	<meta property="og:description" content="alt-tab: alternative tech talks · perth wa" />
+
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;700&family=Martian+Mono:wght@500&display=swap');
+	</style>
+	<link rel="stylesheet" href="/theme/css/{{ CSS_FILE }}" type="text/css" />
+
+	% if FEED_ATOM:
+	<link href="{{ FEED_DOMAIN }}/{{ FEED_ATOM }}" type="application/atom+xml" rel="alternate"
+		title="{{ SITENAME }} Atom Feed" />
+	% endif
+	% if FEED_RSS:
+	<link href="{{ FEED_DOMAIN }}/{{ FEED_RSS }}" type="application/rss+xml" rel="alternate"
+		title="{{ SITENAME }} RSS Feed" />
+	% endif
+
+	<title>{{SITENAME}}</title>
+</head>
 
 <body>
 <main id="homepage">
@@ -10,7 +41,7 @@
 		<h3 id="logo-subheader">alternative tech talks · perth wa</h3>
 	</div>
 	
-		<img src="/static/thinker.gif" >
+		<img src="/img/thinker.gif" >
 	
 
 	% if articles_page.object_list:

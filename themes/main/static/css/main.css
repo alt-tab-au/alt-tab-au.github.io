@@ -10,6 +10,13 @@ html {
     background-color: var(--clr-bg);
 }
 
+* {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+}
+
 body {
     min-height: 100vh;
     font-family: "IBM Plex Sans", sans-serif;
@@ -119,9 +126,18 @@ Navbar
 
 .content {
     height:100%;
-    width: 600px;
+    width: 800px;
     margin: 2em auto;
     font-size: 1.2em;
+}
+
+#img-feature {
+    margin: auto;
+    text-align: center;
+}
+#img-feature > img {
+    max-width: 100%;
+    max-height: 600px;
 }
 
 
@@ -174,10 +190,6 @@ blockquote p {
     margin: 0rem 0.2rem;
 }
 
-img {
-    max-width: 100%;
-}
-
 ul {
     margin: 0;
 }
@@ -195,6 +207,7 @@ ul {
 
 @media screen and (max-width: 800px) {
     h1#logo-header {
+        /* homepage logo */
         font-size: 3em;
     }
     #logo-subheader {
@@ -233,9 +246,5 @@ ul {
         #00000000 100%
         );
     }
-
-    #img-feature {
-        max-width: 1200px;
-        margin: auto;
-    }
 }
+
