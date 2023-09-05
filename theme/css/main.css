@@ -1,0 +1,271 @@
+html {
+    --clr-orange: #fe8019;
+    --clr-red: #C82D47;
+    --clr-red-light: #fb4934;
+    --clr-fg: #6b1826;
+    --clr-bg: #d9d2e9;
+    --clr-bg-light: #E8E4F1;
+    --clr-accent: #FFFACC;
+
+    background-color: var(--clr-bg);
+}
+
+* {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "IBM Plex Sans", sans-serif;
+    margin: auto;
+    padding: 0;
+    color: var(--clr-fg);
+    overflow-wrap: break-word;
+}
+
+main {
+    margin: auto;
+    flex-grow: 1;
+}
+
+header {
+    height:fit-content;
+}
+
+footer {
+    font-family: 'Martian Mono';
+    padding: 2em;
+    text-align: center;
+}
+
+/*
+Index/homepage
+*/
+#homepage {
+    text-align: center;
+    width: 80%;
+    max-width: 800px;
+}
+
+.paginator {
+    text-align: center;
+    font-size: 1.6rem;
+}
+
+#logo {
+    max-width: fit-content;
+    margin: auto;
+}
+
+#logo-header {
+    font-size: 2em;
+    font-family: 'Martian Mono';
+    grid-area: logo;
+    justify-self: start;
+    color: var(--clr-accent);
+
+    text-shadow: .0em -.05em 0px var(--clr-orange),
+        .0em -.15em 0px var(--clr-red-light),
+        .0em -.2em 0px var(--clr-orange);
+}
+
+h1#logo-header {
+    font-size: 8em;
+    margin-block-end: 0;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+#logo-subheader {
+    font-family: 'Martian Mono';
+    margin-block-start: 0;
+    margin-top: 0;
+    text-align: end;
+}
+
+.event-list {
+    list-style: none;
+    font-size: 1.2em;
+    margin: 1em auto;
+    height: 100%;
+}
+
+/*
+Navbar
+*/
+#topnav {
+    display: grid;
+    align-items: center;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "logo rightlinks";
+    padding: 0.4rem 0.8rem;
+    margin: 1em;
+    font-family: "Martian Mono", monospace;
+    grid-area: header;
+    background-color: var(--clr-bg);
+}
+#nav-sitename {
+    grid-area: logo;
+    justify-self: start;
+}
+#nav-links {
+    grid-area: rightlinks;
+    text-align: end;
+}
+
+#nav-extra {
+    grid-area: rightlinks;
+    text-align: end;
+}
+
+#nav-extra > p {
+    margin: 0;
+}
+
+
+
+#homepage-links {
+    margin: auto;
+    max-width: 400px;
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.post-list, .post-single {
+    height:100%;
+    max-width: 800px;
+    margin: 2em auto;
+    font-size: 1.2em;
+}
+
+.img-feature {
+    display: block;
+    margin: auto;
+    max-width: 100%;
+    max-height: 600px;
+}
+
+.content {
+    margin: auto;
+}
+
+mark {
+    color: var(--clr-bg);
+    background: var(--clr-fg);
+}
+
+
+a {
+    text-decoration: none;
+    color: var(--clr-red);
+}
+
+a:hover {
+    color: var(--clr-red-light);
+}
+
+sub {
+    font-size: small;
+}
+
+
+pre {
+    margin: 0;
+    padding: 0.3em 0.5em 0.5em;
+    background: var(--clr-bg-light);
+}
+
+code {
+    font-size: 0.7em;
+    font-family: "Martian Mono", monospace;
+}
+
+blockquote {
+    border-left: 5px solid var(--clr-accent);
+    width: 80%;
+    margin:1rem 1rem;
+    padding: 1px 0.4rem;
+    font-family: "PT Serif", "Baskerville", serif;
+    text-align: justify;
+    line-height: 1.2rem;
+    font-size: 1.0rem;
+}
+blockquote > blockquote { /* yo dawg */
+    margin: 0.5rem 0.5rem;
+    width: auto;
+}
+blockquote p {
+    margin: 0rem 0.2rem;
+}
+
+ul {
+    margin: 0;
+}
+
+.post-list > article {
+    border: 2px solid;
+    margin-bottom: 1em;
+}
+
+/* #sidebar {
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    align-items: center;
+} */
+
+@media screen and (max-width: 800px) {
+    h1#logo-header {
+        /* homepage logo */
+        font-size: 3em;
+    }
+    #logo-subheader {
+        font-size: 1em;
+    }
+    .content {
+        max-width: 90%;
+    }
+}
+
+@media screen and (min-width: 893px) and (max-width: 1200px)  {
+    html {
+        background-image: radial-gradient(circle, #A393C8 1px, #d9d2e9 1px);
+        background-size: 40px 40px;
+    }
+    body {
+        background-image: -webkit-linear-gradient(left,
+        #00000000 0%,
+        var(--clr-bg) 15%,
+        var(--clr-bg) 85%,
+        #00000000 100%
+        );
+    }
+}
+
+@media screen and (min-width: 1201px) {
+    html {
+        background-image: radial-gradient(circle, #A393C8 1px, #d9d2e9 1px);
+        background-size: 40px 40px;
+    }
+    body {
+        background-image: -webkit-linear-gradient(left,
+        #00000000 0%,
+        var(--clr-bg) 20%,
+        var(--clr-bg) 80%,
+        #00000000 100%
+        );
+    }
+}
+
